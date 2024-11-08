@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --span: #B9B9B9;
+    --text:  #6e6b7b;
+    --input: #e1e4eb; 
+    --title:  #5e5873;
+    --border: #D8D6DE; 
+    --background: #f8f8f8;
+    --foreground: #2d3a4c;
+
+    --card: #ffffff;
+    --card-foreground: #2d3a4c;
+
+    --link: #7367f0;
+    --link-foreground: #5048a5;
+
+    --accent: #f2f3f8; 
+    --accent-foreground: #0b0e1a; 
+  }
+
+  .dark {
+
+    --span: #676d7d;
+    --text:  #d5d7dd;
+    --input: #1e1f26;
+    --title:  #d0d2d6;
+    --border: #1e1f26;
+    --label: #5e5873;
+    --background: #2d3a4c;
+    --foreground: #fafafa;
+
+    --card: #283046;
+    --card-foreground: #fafafa;
+
+    --accent: #31434f; 
+    --accent-foreground: #fafafa;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  body > * &::-webkit-scrollbar {
+    width: 5px;
+  }
+  body > * &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent;
+  }
+  body > * &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #c4c4c4;
+  }
+
+  input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Tema claro */
+  body input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: #a6adbb;
+  }
+
+  /* Tema escuro */
+  .dark input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #283046 inset;
+    -webkit-text-fill-color: #a6adbb;
+  }
+  .custom-rounded {
+    border-start-start-radius: inherit !important;
+    border-start-end-radius: inherit !important;
+    border-end-start-radius: unset !important;
+    border-end-end-radius: unset !important;
+  }
+
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+}
