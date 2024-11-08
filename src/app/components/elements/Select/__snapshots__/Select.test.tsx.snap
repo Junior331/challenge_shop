@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component matches snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="form-control w-full max-w-32"
+  >
+    <div
+      class="label"
+    >
+      <span
+        class="label-text"
+      >
+        Select an option
+      </span>
+    </div>
+    <select
+      class="select select-bordered bg-card w-full  btn btn-outline hover:bg-accent text-text"
+    >
+      <option
+        value=""
+      >
+        Choose an option
+      </option>
+      <option
+        value="option1"
+      >
+        Option 1
+      </option>
+      <option
+        value="option2"
+      >
+        Option 2
+      </option>
+      <option
+        value="option3"
+      >
+        Option 3
+      </option>
+    </select>
+  </label>
+</DocumentFragment>
+`;

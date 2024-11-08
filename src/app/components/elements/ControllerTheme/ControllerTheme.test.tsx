@@ -1,29 +1,40 @@
-import "@testing-library/jest-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, fireEvent } from "@testing-library/react";
 import { ControllerTheme } from "./ControllerTheme";
 
-describe("ControllerTheme component", () => {
-  const mockProps = {
-    text: "Click me!",
-    onClick: jest.fn(),
-  };
-  test("should render without crashing", () => {
+describe("ControllerTheme", () => {
+  test("should render the component without errors", () => {
     render(<ControllerTheme />);
-    expect(screen.getByText(mockProps.text)).toBeTruthy();
   });
 
-  test("should can click in controller theme", () => {
-    render(<ControllerTheme />);
-    fireEvent.click(screen.getByText(mockProps.text));
-    expect(mockProps.onClick).toHaveBeenCalledTimes(1);
+  test("should toggle the 'dark' class on document element when checkbox is clicked", () => {
+    const { getByRole } = render(<ControllerTheme />);
+    const checkbox = getByRole("checkbox");
+    const documentElement = document.documentElement;
+  
+    fireEvent.click(checkbox);
+  
+    expect(documentElement.classList.contains("dark")).toBe(true);
+  
+    fireEvent.click(checkbox);
+  
+    expect(documentElement.classList.contains("dark")).toBe(false);
   });
 
-  test("should can't click in controller theme", () => {
-    render(<ControllerTheme disabled/>);
-    userEvent.click(screen.getByText(mockProps.text));
-    expect(screen.getByText(mockProps.text).closest("input")).toHaveAttribute(
-      "disabled"
+  test("should apply the provided className prop to the label element", () => {
+    const className = "custom-class";
+    const { getByLabelText } = render(
+      <ControllerTheme className={className} />
     );
+    const label = getByLabelText("theme-controller");
+
+    expect(label.classList.contains(className)).toBe(true);
   });
+
+  test("should disable the checkbox when disabled prop is true", () => {
+    const { getByTestId } = render(<ControllerTheme disabled={true} />);
+    const checkbox = getByTestId("theme-checkbox") as HTMLInputElement;
+  
+    expect(checkbox.disabled).toBe(true);
+  });
+  
 });

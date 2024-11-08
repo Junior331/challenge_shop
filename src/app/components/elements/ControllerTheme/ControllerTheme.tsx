@@ -8,13 +8,17 @@ export const ControllerTheme = ({ className, disabled = false }: Props) => {
 
   return (
     <label
+      htmlFor="theme-checkbox"
+      aria-label="theme-controller"
       className={`swap swap-rotate btn btn-ghost btn-circle ${className}`}
     >
       <input
         type="checkbox"
         value="synthwave"
+        id="theme-checkbox"
         onClick={toggleDark}
         disabled={disabled}
+        data-testid="theme-checkbox"
         className="theme-controller"
       />
 
