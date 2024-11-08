@@ -39,7 +39,7 @@ export default function SignIn() {
 
   return (
     <LayoutAbstract>
-      <form className="w-full h-auto flex flex-col ga" onSubmit={handleSubmit}>
+      <form className="w-full h-auto flex flex-col" onSubmit={handleSubmit}>
         <Image
           alt="Image logo"
           src={images.logoOutline}

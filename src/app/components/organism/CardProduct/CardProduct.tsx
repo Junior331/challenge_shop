@@ -19,7 +19,7 @@ export const CardProduct = ({
   return (
     <div
       {...res}
-      className={`card card-compact bg-card min-w-[305px] h-[365px] shadow-xl flex-1 ${className}`}
+      className={`card card-compact bg-card min-w-[305px] h-[365px] shadow-xl flex-1 max-[400px]:min-w-full ${className}`}
     >
       <figure className="bg-input custom-rounded">
         <Image

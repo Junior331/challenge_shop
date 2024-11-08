@@ -18,7 +18,7 @@ export const CardProductDetails = ({
   return (
     <div
       {...res}
-      className={`card card-compact bg-card min-w-[305px] h-[365px] shadow-xl flex-1 ${className}`}
+      className={`card card-compact bg-card min-w-[305px] min-h-[365px] shadow-xl flex-1 max-[400px]:min-w-full ${className}`}
     >
       <div className="card card-side bg-card w-full h-auto shadow-xl overflow-hidden">
         <figure className="w-[365px] min-h-[365px] bg-input">
