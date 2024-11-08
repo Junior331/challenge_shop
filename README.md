@@ -7,6 +7,8 @@
 ## Principais Tecnologias utilizadas
 
 - Next
+- daisyUI
+- firebase
 - Tailwind
 - Typescript
 
